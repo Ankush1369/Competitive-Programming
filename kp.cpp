@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <vector>
 using namespace std;
 
@@ -39,9 +40,13 @@ int knapsack_dp(int w[], int v[], int n, int total_W)
 
 int main()
 {
-    int w[] = {1, 5, 3, 4};
-    int v[] = {15, 10, 9, 5};
-    int n = 4;
+    int n;
+    cin >> n;
+    int w[n], v[n];
+	for(int i=0; i<n; i++)
+	{
+		cin >> w[i] >> v[i];
+	}
     int total_W = 8;
     cout << "Using recursive knapsack: " << knapsack_recursive(w, v, n, total_W) << '\n';
     cout << "Using knapsack dp: " << knapsack_dp(w, v, n, total_W) << '\n';
